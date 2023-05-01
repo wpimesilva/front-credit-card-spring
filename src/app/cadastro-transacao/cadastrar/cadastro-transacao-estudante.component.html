@@ -1,0 +1,31 @@
+<form [formGroup]="formCadastroTransacao">
+  <mat-card>
+      <mat-card-content fxLayout="row">
+
+
+          <!-- name -->
+          <mat-form-field>
+              <mat-label>Preço</mat-label>
+              <input id="preco" formControlName="preco" matInput placeholder="Preço" type="text" />
+              <mat-error *ngIf="formCadastroTransacao.controls['preco'].hasError('required')">
+                Preço é obrigatório
+              </mat-error>
+
+          </mat-form-field>
+
+
+
+
+      </mat-card-content>
+
+      <mat-card-actions>
+          <button color="primary" mat-raised-button (click)="voltar()">
+              Voltar
+          </button>
+          <button color="primary" mat-raised-button (click)="cadastrarTransacaoEstudante()">
+            Criar
+        </button>
+
+      </mat-card-actions>
+  </mat-card>
+</form>

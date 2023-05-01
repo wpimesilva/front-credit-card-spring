@@ -1,0 +1,39 @@
+<form [formGroup]="formCadastroEstudante">
+    <mat-card>
+        <mat-card-content fxLayout="row">
+
+            <!-- name -->
+            <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input id="nome" formControlName="nome" matInput placeholder="Nome" type="text" />
+                <mat-error *ngIf="formCadastroEstudante.controls['nome'].hasError('required')">
+                    Nome é obrigatório
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <!-- name -->
+            <mat-form-field>
+                <mat-label>RM</mat-label>
+                <input id="RM" formControlName="RM" matInput placeholder="RM" type="text" />
+                <mat-error *ngIf="formCadastroEstudante.controls['RM'].hasError('required')">
+                  RM é obrigatório
+                </mat-error>
+
+            </mat-form-field>
+
+
+
+
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button color="primary" mat-raised-button (click)="voltar()">
+                Voltar
+            </button>
+            <button color="primary" mat-raised-button (click)="create()">
+              Criar
+          </button>
+
+        </mat-card-actions>
+    </mat-card>
+</form>
